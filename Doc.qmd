@@ -1,0 +1,15 @@
+---
+title: "Intro to dplyr"
+author: "Dylan Pelloquin"
+format: 
+  revealjs:
+    echo: false
+  
+---
+
+```{r}
+library(here)
+here::i_am("dplyr101.Rproj")
+```
+
+
