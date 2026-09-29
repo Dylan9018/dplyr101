@@ -12,4 +12,33 @@ library(here)
 here::i_am("dplyr101.Rproj")
 ```
 
+```{r}
+library(ggplot2)
+library(dplyr)
+View(diamonds)
+data("diamonds")
+```
+
+## link between diamond carat and price 
+```{r}
+ggplot(diamonds,aes(x=carat,y=price))+
+  geom_point()
+```
+
+## Selcting a subset of dataset
+
+```{r}
+#| echo: true
+diamonds_2ct<-diamonds %>% filter(abs(carat-2)<0.1) 
+View(diamonds_2ct)
+ggplot(diamonds_2ct,aes(x=carat,y=price))+
+  geom_point()
+```
+## Prices of 2 carat diamonds
+
+```{r}
+diamonds %>% filter(carat>=2 , carat<2.1) %>% ggplot(aes(x=carat,y=price,group=carat))+
+  geom_boxplot()
+
+```
 
